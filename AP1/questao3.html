@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémons</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 32px 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 24px;
+        }
+        button {
+            margin: 0 12px;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border: none; 
+            border-radius: 8px;
+            background: #1976d2;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:disabled {
+            background: #bdbdbd;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="Pokémon">
+        <div>
+            <button id="botao-voltar" onclick="diminuirDex()">Voltar -1</button>
+            <button id="botao-adiantar" onclick="aumentarDex()">Adiantar +1</button>
+        </div>
+    </div>
+    <script>
+        const img = document.getElementById('pokemon-img');
+        const botaoVoltar = document.getElementById('botao-voltar');
+        const botaoAdiantar = document.getElementById('botao-adiantar');
+        let idEscolhido = 1;
+
+        function updateImage() {
+            img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${idEscolhido}.svg`;
+            botaoVoltar.disabled = idEscolhido <= 1;
+            botaoAdiantar.disabled = idEscolhido >= 100;
+        }
+
+        function diminuirDex() {
+            if (idEscolhido > 1) {
+                idEscolhido--;
+                updateImage();
+            }
+        }
+
+        function aumentarDex() {
+            if (idEscolhido < 100) {
+                idEscolhido++;
+                updateImage();
+            }
+        }
+
+        updateImage();
+    </script>
+</body>
+</html>

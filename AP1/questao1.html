@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>questao_01</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header, nav, main, section, footer {
+      padding: 10px;
+    }
+    header {
+      background-color: #e0e0e0;
+      text-align: center;
+      font-weight: bold;
+    }
+    .container {
+      display: flex;
+      flex-direction:row;
+      height: 800px;
+    }
+    nav {
+      background-color: #d0f0c0;
+      width: 30%;
+    }
+    main {
+      background-color: #f0f8ff;
+      width: 70%;
+    }
+    footer {
+      background-color: #f8f8f8;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    img {
+      width: 100%;
+      height: 250px;
+      background-color: #ccc;
+      margin: 10px 0;
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        flex-direction: column;
+      }
+      nav, main {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Desenvolvimento de Software WEB</h2>
+  </header>
+
+  <div class="container">
+
+    <nav>
+      <a href="#">Link 1</a><br>
+      <a href="#">Link 2</a><br>
+      <a href="#">Link 3</a><br>
+      <a href="#">Link 4</a>
+    </nav>
+
+    <main>
+      <section>
+        <h3>Introdução ao HTML</h3>
+        <p>Um cachorro</p>
+        <div class="image-placeholder"><img src="https://picsum.photos/id/237/536/354" alt=""></div>
+        <p>Outro cachorro</p>
+        <div class="image-placeholder"><img src="https://picsum.photos/id/237/536/354" alt=""></div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p><a href="douglasssousa@alu.ufc.br">douglasssousa@alu.ufc.br</a><br>
+    2025.1<br>
+    Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
